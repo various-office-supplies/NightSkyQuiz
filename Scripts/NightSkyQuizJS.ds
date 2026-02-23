@@ -1,0 +1,74 @@
+﻿# {[6.21.03.1]}
+# {[6.19.07.1]}
+# Digistar Script 
+# Created: 11/15/2019
+
+0:00	system reset
+
++3	eye color black
+	system eveningsky
+
+	quizClass is class type temporary
+	# 'system get attrTypes' lists the valid attribute types
+	quizClass attribute count uint8
+	quizClass attribute message string
+	quizClass command level
+	quizClass command init
+	quizClass command reset
+	quizClass command delete
+	quizClass lock
+
++2	myQuiz is quizClass
+
+# Common > 'Night Sky Quiz' Control Panel contains 50 scriptable buttons
+# with names quizButton01...quizButton50
+# Use 'quizButton01 is buttonClass' to instantiate
+# then button properties become available to scripting
+# e.g. quizButton01 label "Button 01", quizButton01 fontsize 32
+
++1	scene date 2019-12-05 20:00 local
+	eye location here
+	
++1	eye color white duration 2
+
+#+2	orilabel on intensity 0 text "#1"
+
+	south is textClass
+	south text " "
+	south origin "center"
+	south textscale 1 1
+	south color white
+	south pos spherical 0 3 10
+	south int 0
+	scene add south near
+
+	east is textClass
+	east text " "
+	east origin "center"
+	east textscale 1 1
+	east color white
+	east pos spherical -90 3 10
+	east int 0
+	scene add east near
+	
+	north is textClass
+	north text " "
+	north origin "center"
+	north textscale 1 1
+	north color white
+	north pos spherical 180 3 10
+	north int 0
+	scene add north near
+
+	west is textClass
+	west text " "
+	west origin "center"
+	west textscale 1 1
+	west color white
+	west pos spherical 90 3 10
+	west int 0
+	scene add west near
+	
+	js play ./NightSkyQuizJS.js
+
++10	script end

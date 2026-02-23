@@ -1,0 +1,218 @@
+!date 2023-12-11 20:30
+!sticks on
+#!stickFade on
+!addCommands
+	system planetAtmosphere off
+	eclipticText intensity 0
+	galequatorText intensity 0
+#	aurora on
+#	system morningsky
+
+!info
+#	a
+#	1
+#	2
+#	3
+#	4
+#	5
+
+-- c
+	gem
+	leo
+	cnc
+
+	and
+	aql
+	aur
+	cas
+	cyg
+	lyr
+	ori
+	peg
+#	per
+#	tau
+#	umi
+-- s
+	aldebaran
+	alpheratz
+	altair
+	albireo
+	betelgeuse
+	capella
+	deneb
+	fomalhaut
+	hamal
+	mirfak
+	polaris
+	rigel
+	vega
+-- m
+	m31
+	m42
+	m45
+-- d
+	north
+	south
+	east
+	west
+-- p
+	venus
+	mars
+	jupiter
+	saturn
+	uranus
+	neptune
+-- o
+	ecliptic
+	celequator
+	galequator
+	zenith
+	ncp
+	moon
+
+
+
+!order
+	and
+	alpheratz
+	m31
+	aql
+	saturn
+	aqr
+	altair
+	ari
+	hamal
+	jupiter
+	aur
+	capella
+	cas
+	caph
+	cep
+	cet
+	cyg
+	deneb
+	albireo
+	dra
+	thuban
+	gem
+	castor
+	pollux
+	lyr
+	vega
+	ori
+	bellatrix
+	betelgeuse
+	mintaka
+	rigel
+	m42
+	peg
+	markab
+	scheat
+	per
+	algol
+	mirfak
+	psc
+	psa
+	fomalhaut
+	tau
+	aldebaran
+	elnath
+	m1
+	m45
+	umi
+	polaris
+	ncp
+	north
+	east
+	south
+	west
+	zenith
+	ecliptic
+	altitude
+	galequator
+	celequator
+	moon
+
+
+
+// Everything under this is ignored by Digistar. Feel free to say whatever you'd like :)
+
+			___________________________
+			_______ Study Guide _______
+
+Categories are defined by '-- '. Full names/labels are fine, but the first letter should not be changed.
+   -->	Example (different ways to define 'stars' category):
+	----------------------------------------------
+	-- s
+				(or)
+	-- S
+				(or)
+	-- Stars
+				(or)
+	-- Supercalifragilisticexpialidocious!
+	----------------------------------------------
+
+Objects are defined by '	'(tab) and their digistar ID.
+   -->	Example (defines 'vega', 'north', and 'east'):
+	----------------------------------------------
+	-- s
+		vega
+	-- d
+		north
+		east
+	----------------------------------------------
+
+Comments (i.e., disabling a line) use a '#' at the beginning of the line (not used for categories).
+   -->	Example ('north', 'east', and 'west' are included, 'south' is not):
+	----------------------------------------------
+	-- d
+		north
+	#	south
+		east
+		west
+	----------------------------------------------
+
+Commands start with "!" and can be commented out (will set to default).
+	-> !date is written "yyyy/mm/dd hh:mm" (military time) and defaults to Winter 2019.
+	-> !sticks is on/off and defaults to off.
+	-> !addCommands will input subsequent lines as commands to digistar.
+   -->	Example (date at Jan 1st @ 7pm, stick off, and addCommands 'Scene' and 'System'):
+	----------------------------------------------
+	!date 2020-01-01 19:00
+	#!sticks on
+	!addCommands
+		scene zoomFOV 70
+	#	MilkyWay off
+		system morningsky
+	
+	----------------------------------------------
+
+!alphabetize and !order
+	-> !alphabetize orders every star/object alphabetically. This will
+		overwrite any 
+	-> !order takes subsequent lines and saves them as a list.
+		It uses this list similar to alphabetical order, where
+		the order of stars/objects you give it will determine how
+		buttons are display.  This DOES NOT care about Category, only
+		the name of the star/object.  You can mix/match, and you can
+		include every star/object in one list.
+	-> One use for this could be if you want to group by constellations, 
+		you would list the constellation, then every star after, then
+		the next constellation, then those stars, etc.
+   -->	Example (we want N,S,E,W to always be in order of:  W,E,N,S):
+	----------------------------------------------
+	!order
+		west
+		east
+		north
+		south
+	----------------------------------------------
+   ->	Example (instead, we want the buttons to always be:  N,S,E,W, and then Polaris):
+	----------------------------------------------
+	!order
+		north
+		south
+		east
+		west
+		polaris
+	----------------------------------------------
